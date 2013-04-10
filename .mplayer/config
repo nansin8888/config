@@ -1,0 +1,28 @@
+# Write your default config options here!
+autosync=0
+mc=0
+ao=alsa
+vo=vdpau,xv
+stop-xscreensaver=no
+#monitoraspect=1440:900
+zoom=yes
+subcp=cp936
+unicode=yes
+#Displaye Chinese subtitles if available
+slang=chs
+#设置自动缩放字幕，0－不自动缩放，1－按电影高度缩放，2－按电影宽度缩放，3－按电>影对角线缩放(默认值)
+subfont-autoscale=1
+#设置字幕文本的自动缩放系数(屏幕尺寸的百分比)，值范围为0～100
+subfont-text-scale=4
+subfont-osd-scale=2
+font=/usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc #选择字幕用的字体
+overlapsub=1
+# Load all subtitles containing the movie name
+sub-fuzziness=1
+osdlevel=3
+# set 8MB input cache
+cache = 102400  
+fontconfig=0
+#set 1 to enable the ass subtitles
+ass=0
+ass-font-scale=0.8

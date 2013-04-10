@@ -13,20 +13,39 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1
+#font xft:monaco 10
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-#open xxxxxxxx
-bindsym $mod+Shift+f exec firefox  
+
+
+# focus follows mouse
+focus_follows_mouse no
+
+# 自定义
+bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+w exec pcmanfm 
+bindsym $mod+Shift+v exec virtualbox
+bindsym $mod+Shift+m exec xmradio 
+bindsym $mod+Shift+b exec rdesktop -g 1024X768 -u user -p xxx -r clipboard:PRIMARYCLIPBOARD -r disk:arch=/home/hans/linshi bt
+bindsym $mod+t border normal
+bindsym $mod+u border none
+
+# 暂存器使用
+# mod shift -  隐藏当前窗口
+# mod -	       现实第一个暂存的窗口	
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 # start a terminal
-bindsym $mod+Return exec lxterminal   
-#bindsym $mod+Return exec xterm -fg darkseagreen -bg black 
+bindsym $mod+Return exec lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -145,9 +164,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Startups #
+#exec --no-startup-id fcitx
+exec --no-startup-id volumeicon
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        position top
-        status_command conky -c ~/.conkyrc 
+	position bottom
+        status_command conky -c ~/.conkyrc
+    colors {
+        background #555555
+        statusline #ffffff
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+    }
+
 }
