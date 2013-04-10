@@ -33,6 +33,7 @@ focus_follows_mouse no
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+w exec pcmanfm 
 bindsym $mod+Shift+v exec virtualbox
+bindsym $mod+Shift+y exec yozo
 bindsym $mod+Shift+m exec xmradio 
 bindsym $mod+Shift+b exec rdesktop -g 1024X768 -u user -p xxx -r clipboard:PRIMARYCLIPBOARD -r disk:arch=/home/hans/linshi bt
 bindsym $mod+t border normal
